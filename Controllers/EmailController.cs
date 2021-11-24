@@ -26,9 +26,9 @@ namespace OlwandleHotel.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var senderEmail = new MailAddress("bonkegama@outlook.com", "Durban Equipment Team");
+                    var senderEmail = new MailAddress("email", "Durban Equipment Team");
                     var receiverEmail = new MailAddress(receiver, "Receiver");
-                    var password = "1@Miselolwam";
+                    var password = "password";
                     var sub = subject;
                     var body = message;
                     var smtp = new SmtpClient

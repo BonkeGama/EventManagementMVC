@@ -1,0 +1,81 @@
+﻿@model OlwandleHotel.Models.Rooms
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Tents</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Roomtype.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roomtype.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoBooked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoBooked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOfRooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOfRooms)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

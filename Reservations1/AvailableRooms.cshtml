@@ -1,0 +1,31 @@
+﻿@model IEnumerable<OlwandleHotel.Models.Rooms>
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>AvailableTents</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover table-condensed">
+
+    <tr>
+        <td>Tent Type    </td>
+
+        <td>Picture      </td>
+    </tr>
+    @foreach (OlwandleHotel.Models.Rooms item in @Model)
+    {
+        <tr>
+            <td>@item.Roomtype.Type</td>
+
+            <td>
+                <a href="@Url.Action("Create", "Rooms", new { id = item.RoomNo })" title="View Details" , rel="nofollow">
+                    <img src="data:image/png;base64,@Convert.ToBase64String(item.Picture, 0, item.Picture.Length)" style="width: 150px; height: 150px" alt="" />
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,92 @@
+﻿@model OlwandleHotel.Models.Bill
+@{
+    ViewBag.Title = "Bill";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+    var msg = TempData["AlertMessage"] ?? string.Empty;
+}
+<script type="text/javascript">
+    var msg = '@msg';
+    if (msg)
+    {
+        alert(msg)
+    }
+
+</script>
+
+<h2>Your Bill </h2>
+<p>
+    <input class="btn btn-primary" type="button" value="Print Bills" id="btnPrint" />
+</p>
+@*<div class="row">
+    <div class="col-md-4">
+        <table class="table table-hover table-condensed" id="my_list">
+            <tr>
+            </tr>
+            <tr>
+                <th>Room No.</th>
+                <td>
+                    @Html.DisplayFor(model => model.RoomNo)
+                </td>
+            </tr>
+            <tr>
+                <th>Basic Charge</th>
+                <td>
+                    @Html.DisplayFor(model => model.BasicCharge)
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>*@
+    <div class="col-md-4">
+
+        <table class="table">
+            <tr></tr>
+            <tr>
+                <th>TentNo.</th>
+                <td>
+                    @Html.DisplayFor(model => model.RoomNo)
+                </td>
+            </tr>
+            <tr>
+                <th>Basic Charge</th>
+                <td>
+                    @Html.DisplayFor(model => model.BasicCharge)
+                </td>
+            </tr>
+            <tr>
+                <th>Start Date</th>
+                <td>
+                    @Html.DisplayFor(model => model.checkInDate)
+                </td>
+            </tr>
+            <tr>
+                <th>End Date</th>
+                <td>
+                    @Html.DisplayFor(model => model.checkOutDate)
+                </td>
+            </tr>
+            <tr>
+                <th>Day No.</th>
+                <td>
+                    @Html.DisplayFor(model => model.DayNo)
+                </td>
+            </tr>
+            
+            <tr>
+                <th>Discount</th>
+                <td>
+                    @Html.DisplayFor(model => model.Discount)
+                </td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>
+                    @Html.DisplayFor(model => model.TotalAmount)
+                </td>
+            </tr>
+          
+        </table>
+        @Html.ActionLink("Pay", "Index")
+
+        </div>
+

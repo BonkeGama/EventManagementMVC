@@ -1,0 +1,103 @@
+﻿@model OlwandleHotel.Models.GuestDetails
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+    var msg = TempData["AlertMessage"] ?? string.Empty;
+}
+<script type="text/javascript">
+    var msg = '@msg';
+    if (msg)
+    {
+        alert(msg)
+    }
+
+</script>
+
+<h2>Confirm Hiring</h2>
+@*<p>
+    <input class="btn btn-primary" type="button" value="Print Bills" id="btnPrint" />
+</p>*@
+<div class="row">
+    <div class="col-md-4">
+        <table class="table table-hover table-condensed" id="my_list">
+            <tr>
+                @*<th>Bookings</th>*@
+                @*<td>
+                        @Html.DisplayFor(model => model.bookings)
+                    </td>*@
+            </tr>
+            <tr>
+                <th>Tent No.</th>
+                <td>
+                    @Html.DisplayFor(model => model.RoomNo)
+                </td>
+            </tr>
+           
+            <tr>
+                <th>Type</th>
+                <td>
+                    @Html.DisplayFor(model => model.Type)
+                </td>
+            </tr>
+            <tr>
+                <th>Basic Charge</th>
+                <td>
+                    @Html.DisplayFor(model => model.BasicCharge)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <table class="table">
+            <tr>
+                <th>Start Date</th>
+                <td>
+                    @Html.DisplayFor(model => model.checkInDate)
+                </td>
+            </tr>
+            <tr>
+                <th>End Date</th>
+                <td>
+                    @Html.DisplayFor(model => model.checkOutDate)
+                </td>
+            </tr>
+            <tr>
+                <th>Number Of Days</th>
+                <td>
+                    @Html.DisplayFor(model => model.numGuests)
+                </td>
+            </tr>
+           
+            @*<tr>
+                <th>Total Price</th>
+                <td>
+                    @Html.DisplayFor(model => model.TotalPrice)
+                </td>
+            </tr>*@
+        </table>
+    </div>
+</div>
+@*<input type="button" value="Confirm and Accept Payment" onclick="@("window.location.href= ' " + @Url.Action("PayFast", "Reservations1",new { ID=Model.Email}) + "'");"/>*@
+
+@Html.ActionLink("Confirm Your Rental", "Fees", "Home", new { ID = Model.Email },new { @class="btn btn-success"})
+
+
+
+@*<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Secure Payment" class="btn btn-default" />
+    </div>
+</div>*@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#btnPrint").live("click", function () {
+        var divContents = $("#dvContainer").html();
+        var printWindow = window.open('', '', 'height=400,width=800');
+        printWindow.document.write('<html><head><title>DIV Contents</title>');
+        printWindow.document.write('</head><body >');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+    });
+</script>

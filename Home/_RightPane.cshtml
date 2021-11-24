@@ -1,0 +1,177 @@
+﻿
+
+@if (ViewBag.User == "Admin")
+{
+
+
+
+
+
+}
+else if (ViewBag.User == "Clerk")
+{
+    <li>
+        <a href="#exampledropdownDropdown11" aria-expanded="false" data-toggle="collapse"> Registration</a>
+        <ul id="exampledropdownDropdown11" class="collapse list-unstyled ">
+            <li><a href="@Url.Action( "Create","Enrollments")">Registration Process</a></li>
+            <li><a href="@Url.Action( "Index","Enrollments")">Manage Registration </a></li>
+
+        </ul>
+    </li>
+
+    <li>
+        <a href="#exampledropdownDropdown5555" aria-expanded="false" data-toggle="collapse">Uploads</a>
+        <ul id="exampledropdownDropdown5555" class="collapse list-unstyled ">
+            @*<li><a href="@Url.Action("DashBordPage", "Students")">UpDate Profile</a></li>*@
+            <li><a href="@Url.Action("Create", "PDFs")">Time Table</a></li>
+            <li><a href="@Url.Action("Create", "StudyMaterials")">Study Materials</a></li>
+            <li><a href="@Url.Action("Addpic", "UploadPics")">School Pictures</a></li>
+
+        </ul>
+    </li>
+
+    <li>
+        <a href="#exampledropdownDropdown22ii" aria-expanded="false" data-toggle="collapse">Pictures</a>
+        <ul id="exampledropdownDropdown22ii" class="collapse list-unstyled ">
+            <li><a href="@Url.Action( "ViewAllPics","Pictures")">Manage Profile-Pic </a></li>
+            <li><a href="@Url.Action("Addpic", "Pictures" )">Add Profile-Pic</a></li>
+            <li><a href="@Url.Action( "Index","SchoolGalleries")">Manage Gallery</a></li>
+            <li><a href="@Url.Action( "AddGallery", "SchoolGalleries")">Add Gallery</a></li>
+
+        </ul>
+    </li>
+
+
+    <li>
+        <a href="#exampledropdownDropdown33" aria-expanded="false" data-toggle="collapse"> Learners </a>
+        <ul id="exampledropdownDropdown33" class="collapse list-unstyled ">
+            <li><a href="@Url.Action( "Index","Students")">Manage Learners</a></li>
+            <li><a href="@Url.Action( "Register","Account")">Add Learners</a></li>
+
+        </ul>
+    </li>
+
+
+    <li>
+        <a href="#exampledropdownDropdown44" aria-expanded="false" data-toggle="collapse"> Staffs </a>
+        <ul id="exampledropdownDropdown44" class="collapse list-unstyled ">
+            <li><a href="@Url.Action( "Index", "Teachers")">Manage Teachers</a></li>
+            <li><a href="@Url.Action( "Register", "Account")">Add Teachers</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#exampledropdownDropdown5232" aria-expanded="false" data-toggle="collapse"> Event </a>
+        <ul id="exampledropdownDropdown5232" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("Index", "Events")">View Events</a></li>
+            <li><a href="@Url.Action("Create","Events")">Add Events</a></li>
+
+        </ul>
+    </li>
+
+
+}
+else if (ViewBag.User == "Customer")
+{
+
+    <li>
+        <a href="#exampledropdownDropdown55" aria-expanded="false" data-toggle="collapse"> Rental  </a>
+        <ul id="exampledropdownDropdown55" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("AllRooms", "Rooms")">Make Rental Now</a></li>
+            <li><a href="@Url.Action("guestDetails", "Reservations1")">View Rentals</a></li>
+        </ul>
+    </li>
+
+
+
+
+
+
+    <li><a href="@Url.Action("Create", "FeedBacks")">Leave us a comment</a></li>
+
+
+
+
+
+
+
+}
+else if (ViewBag.User == "Student")
+{
+    <li>
+        <a href="#exampledropdownDropdown9999" aria-expanded="false" data-toggle="collapse"> Student Admin </a>
+        <ul id="exampledropdownDropdown9999" class="collapse list-unstyled ">
+            @*<li><a href="@Url.Action("DashBordPage", "Students")">UpDate Profile</a></li>*@
+            @*<li><a href="@Url.Action("Index", "Enrollments")">Registration</a></li>*@
+            <li><a href="@Url.Action("MySubject", "CourseSubjects")">Course Subjects</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#exampledropdownDropdown66" aria-expanded="false" data-toggle="collapse"> Downloads </a>
+        <ul id="exampledropdownDropdown66" class="collapse list-unstyled ">
+            @*<li><a href="@Url.Action("DashBordPage", "Students")">UpDate Profile</a></li>*@
+            <li><a href="@Url.Action("Index", "PDFs")">Time Table</a></li>
+            <li><a href="@Url.Action("Index", "StudyMaterials")">Study Materials</a></li>
+            <li><a href="@Url.Action("Index", "UploadPics")">School Pictures</a></li>
+
+        </ul>
+    </li>
+
+    <li>
+        <a href="#exampledropdownDropdown88" aria-expanded="false" data-toggle="collapse"> My Subject </a>
+        <ul id="exampledropdownDropdown88" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("MySubject", "CourseSubjects")">View My subject</a></li>
+        </ul>
+    </li>
+
+    @*<li>
+             <a href="#exampledropdownDropdown77" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Assignment </a>
+              <ul id="exampledropdownDropdown77" class="collapse list-unstyled ">
+                  <li><a href="@Url.Action("Index", "Subjects")">View Assignments</a></li>
+                  <li><a href="@Url.Action("DashBordPage", "Tasks")">submission</a></li>
+
+              </ul>
+        </li>*@
+
+    <li>
+        <a href="#exampledropdownDropdown588" aria-expanded="false" data-toggle="collapse"> Progress Report </a>
+        <ul id="exampledropdownDropdown588" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("DashBordPage", "Home")">View Progress Report</a></li>
+            <li><a href="@Url.Action("DashBordPage", "Home")">Exam Results</a></li>
+
+        </ul>
+    </li>
+    <li><a href="@Url.Action("Index", "Events")">   Events </a></li>
+
+}
+else if (ViewBag.User == "Staff")
+{
+    <li>
+        <a href="#exampledropdownDropdown55" aria-expanded="false" data-toggle="collapse"> Reservation</a>
+        <ul id="exampledropdownDropdown55" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("Create", "Reserves")">Make Reservation Now</a></li>
+            <li><a href="@Url.Action("Index", "Reserves")">View Reservation</a></li>
+        </ul>
+    </li>
+
+    <li><a href="@Url.Action("Create", "FeedBacks")">Leave us a comment</a></li>
+
+
+
+
+    <li><a href="@Url.Action("Index", "Events")"> Event </a></li>
+
+    <li><a href="@Url.Action("Index", "Procedures")"> View Procedures </a></li>
+    <li><a href="@Url.Action("Index", "Events")"> View Events </a></li>
+    <li><a href="@Url.Action("Index", "Feedbacks")">Vew Comments </a></li>
+}
+
+else
+{
+    @*<li><a href="@Url.Action("Index", "Events")">   <i class="icon-info"></i>Events </a></li>
+        <li><a href="@Url.Action("Fees", "Home")">   <i class="icon-info"></i>Fees </a></li>
+        <li><a href="@Url.Action("Admission", "Home")"> <i class="icon-contract"></i>Admission </a> </li>
+        <li><a href="@Url.Action("Contact", "Home")">  <i class="fa fa-phone"></i>Contact Us </a> </li>*@
+}
+
+

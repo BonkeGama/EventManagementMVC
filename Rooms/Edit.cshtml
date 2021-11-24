@@ -1,0 +1,117 @@
+﻿@model OlwandleHotel.Models.Rooms
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Rooms", routeValues: null, method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Tents</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.RoomNo)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RoomTypeId, "Room Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RoomTypeId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RoomTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FloorNum, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FloorNum, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.FloorNum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <tr>
+                <th>@Html.LabelFor(model => model.Picture)</th>
+                <td>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-file-picture-o"></i>
+                        </div>
+                        <input type="file" name="img_upload" accept=".jpeg,.jpg,.png" onchange="readURL(this);" class="form-control" required="required" />
+                    </div>
+                </td>
+            </tr>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RoomStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RoomStatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RoomStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NoBooked, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NoBooked, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.NoBooked, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumOfRooms, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumOfRooms, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.NumOfRooms, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TotalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TotalPrice, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.TotalPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div class="col-md-6">
+    <img id="image_preview" src="#" alt="" @*style="border: 5px solid #ccc"*@ />
+</div>
+<script type="text/javascript">
+        //image preview
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image_preview')
+                        .attr('src', e.target.result)
+                        .width(300)
+                        .height(300);
+
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

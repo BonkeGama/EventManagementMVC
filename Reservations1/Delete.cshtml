@@ -1,0 +1,114 @@
+﻿@model OlwandleHotel.Models.Reservation
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Cancellation</h2>
+
+<h3>Are you sure you want to cancel this ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.applicationUser.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.applicationUser.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rooms.RoomStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rooms.RoomStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkInDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkInDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkOutDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkOutDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numGuests)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numGuests)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateBooked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateBooked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkedIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkedIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkedOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkedOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_CheckedOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_CheckedOut)
+        </dd>
+
+       
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.bookings)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bookings)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

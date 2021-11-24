@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "SendEmail";
+}
+<div align="center">
+
+    <h2>Update Shipping Status</h2>
+
+    <br /> <br />
+    @if (ViewBag.Error != null)
+    {
+        @ViewBag.Error
+    }
+
+    <form method="post" action="SendEmail">
+        <div class="container">
+            <span class="form-control-static">
+                Confirm Client Email Address:
+            </span>
+            <input class="form-control" type="text" name="receiver" /> <br />
+
+            <span class="form-control-static">
+                Shipping Status:
+            </span>
+            <input class="form-control" type="text" name="message" /> <br />
+            <input class="btn btn-primary" type="submit" value="Update Status" />
+
+        </div>
+    </form>
+
+
+</div>

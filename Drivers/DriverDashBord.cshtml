@@ -1,0 +1,76 @@
+﻿@model OlwandleHotel.Models.Driver
+
+@{
+    ViewBag.Title = "DriverDashBord";
+    @*Layout = "~/Views/Shared/newlwayout.cshtml";*@
+}
+
+
+
+<div class="page-content" style="padding-bottom:0px;">
+
+
+
+
+    <div class="container-fluid tm-section" style="margin-left: 2%;">
+
+
+
+        <div class="row tm-media-row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <div class="tm-media-text-container" style="float:initial;">
+                    <h5>Driver Dashboard</h5>
+
+                    <div class="tm-media-description tm-gray-text-2">
+                        <p id="pmargine">Name</p><span>@Html.DisplayFor(model => model.Driver_Name) </span>
+                        <p id="pmargine">Surname </p><span> @Html.DisplayFor(model => model.Driver_Surname)  </span>
+                        <p id="pmargine">Driver Cell Number </p><span> @Html.DisplayFor(modelItem => modelItem.Driver_CellNo)</span>
+                        <p id="pmargine">Address </p><span> @Html.DisplayFor(modelItem => modelItem.Driver_Address) </span>
+                        <p id="pmargine">RSA ID NO:</p><span> @Html.DisplayFor(model => model.Driver_IDNo) </span>
+                        <p id="pmargine">Completed Orders:</p><span>  @ViewBag.Count </span>
+                    </div>
+                </div>
+
+
+
+
+                <div class="tm-media-text-container" style="float:left;min-width: 40em;padding-left: 0px;">
+                    <div class="messages-block block rightbodermargin">
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+

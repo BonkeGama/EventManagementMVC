@@ -1,0 +1,43 @@
+﻿@model OlwandleHotel.Models.AddPrice
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AddPrice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.priceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

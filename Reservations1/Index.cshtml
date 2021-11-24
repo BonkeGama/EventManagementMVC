@@ -1,0 +1,131 @@
+﻿@model IEnumerable<OlwandleHotel.Models.Reservation>
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+    //Layout = "~/Views/Shared/newlwayout2.cshtml";
+}
+
+<h2>List Of Hirings</h2>
+
+
+
+@using (Html.BeginForm("Index", "Reservations1", FormMethod.Post))
+{
+    <div>
+        Search by Email @Html.TextBox("searchString");
+        <input id="Submit1" type="submit" value="Filter" />
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.applicationUser.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rooms.RoomNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkInDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkOutDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numGuests)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.DateBooked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingStatus)
+        </th>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.Paymentstatus)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.applicationUser.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rooms.RoomNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkInDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkOutDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numGuests)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateBooked)
+        </td>
+       
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Discount)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @if (item.BookingStatus == null)
+            {
+                @Html.DisplayFor(modelItem => item.BookingStatusX)
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.BookingStatus)
+            }
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Paymentstatus)
+        </td>*@
+        <td>
+            @*@Html.ActionLink("Update", "Edit", new { id=item.BookingID }) |
+        @Html.ActionLink("Cancel", "Delete", new { id=item.BookingID })*@
+
+            @if (User.IsInRole("Admin"))
+            {
+
+                @Html.ActionLink("Update", "Edit", new { id = item.BookingID }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Cancel", "Delete", new { id = item.BookingID }, new { @class = "btn btn-danger" })
+
+                if (item.BookingStatus != "Confirmed")
+                {
+                    @Html.ActionLink("|Confirm Reservation", "ConfirmedBooking", new { id = item.BookingID }, new { @class = "btn btn-success" })
+                }
+
+
+
+
+
+            }
+        </td>
+    </tr>
+}
+
+</table>

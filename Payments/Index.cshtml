@@ -1,0 +1,88 @@
+﻿@model IEnumerable<OlwandleHotel.Models.Payments>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.reserve.Id)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.estCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paidEstCost)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.date_PaidEstCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.refNo)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.addDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addCost)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.totalCost)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.paidTotCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_PaidTotCost)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.reserve.Id)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.estCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paidEstCost)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.date_PaidEstCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.refNo)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.addDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addCost)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.totalCost)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.paidTotCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_PaidTotCost)
+        </td>
+        *@<td>
+    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+</td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<OlwandleHotel.Models.Cancellation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.checkInDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkOutDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numGuests)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateBooked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkedOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_CheckedOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayNo)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.bookings)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkInDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkOutDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numGuests)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateBooked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkedIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkedOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_CheckedOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayNo)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.bookings)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+    </tr>
+}
+
+   
+
+</table>
+<div>
+    @Html.ActionLink("Back to bookings", "Index", "Reservations1")
+</div>

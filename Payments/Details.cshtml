@@ -1,0 +1,99 @@
+﻿@model OlwandleHotel.Models.Payments
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payments</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.reserve.userID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reserve.userID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paidEstCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paidEstCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_PaidEstCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_PaidEstCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.refNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.refNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paidTotCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paidTotCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_PaidTotCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_PaidTotCost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

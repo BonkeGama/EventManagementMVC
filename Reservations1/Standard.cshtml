@@ -1,0 +1,85 @@
+﻿@model IEnumerable<OlwandleHotel.Models.Rooms>
+
+@{
+    ViewBag.Title = "";
+
+}
+
+<h2>AllTents</h2>
+
+<br />
+<h1 class="text-center"></h1>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-2 table-bordered" style="height:270px">
+            @if (item.Roomtype.Type == "Standard")
+            {
+                <div class="row" style="text-align: center;padding-top:5px">
+                    @if (item.Picture != null)
+                    {
+                        var base64 = Convert.ToBase64String(inArray: item.Picture);
+                        var imgSrc = string.Format(format: "data:image/gif;base64,{0}", arg0: base64);
+                        <img src="@imgSrc" width="90" height="70" />
+                    }
+                </div>
+                <div class="row">
+                    <p style="text-align: center">
+                        <b> @Html.DisplayFor(expression: modelItem => item.Roomtype.Type)</b>
+                    </p>
+                    <p style="text-align: center">
+                        @Html.DisplayFor(expression: modelItem => item.RoomStatus)
+                    </p>
+                    <p style="text-align: center;font-size:large;">
+                        @Html.DisplayFor(expression: modelItem => item.Roomtype.BasicCharge)
+                    </p>
+                    <p style="text-align: center">
+                        @if (item.NumOfRooms == 0)
+                    {
+                            <a href="@Url.Action(actionName: "add_to_cart", controllerName: "Shopping", routeValues: new {id = item.RoomNo})" class="btn disabled btn-default"><i class="fa fa-shopping-cart disabled"></i>Fully Booked</a>
+                        }
+                        else
+                        {
+                            @*if (item.Roomtype.Type == "Standard")
+                                {
+                                    <a href="@Url.Action(actionName: "Standard", controllerName: "Rooms", routeValues: new {id = item.RoomNo})" class="btn btn-default"><i class="fa fa-shopping-cart"></i> Reserve Room</a>
+                                }
+                                else if (item.Roomtype.Type == "Luxury")
+                                {
+                                    <a href="@Url.Action(actionName: "Luxury", controllerName: "Reservations1", routeValues: new {id = item.RoomNo})" class="btn btn-default"><i class="fa fa-shopping-cart"></i> Reserve Room</a>
+                                }
+                                else if (item.Roomtype.Type == "Family")
+                                {
+                                    <a href="@Url.Action(actionName: "Create", controllerName: "Reservations1", routeValues: new {id = item.RoomNo})" class="btn btn-default"><i class="fa fa-shopping-cart"></i> Reserve Room</a>
+                                }
+                                else if (item.Roomtype.Type == "Deluxe")
+                                {
+                                    <a href="@Url.Action(actionName: "Create", controllerName: "Reservations1", routeValues: new {id = item.RoomNo})" class="btn btn-default"><i class="fa fa-shopping-cart"></i> Reserve Room</a>
+                                }
+                                else if (item.Roomtype.Type == "SeaView")
+                                {
+                                    <a href="@Url.Action(actionName: "Create", controllerName: "Reservations1", routeValues: new {id = item.RoomNo})" class="btn btn-default"><i class="fa fa-shopping-cart"></i> Reserve Room</a>
+                                }*@
+                            <a href="@Url.Action(actionName: "Create", controllerName: "Reservations1", routeValues: new {id = item.RoomNo})" class="btn btn-default"><i class="fa fa-shopping-cart"></i> Reserve Room</a>
+                        }
+                    </p>
+                    <p style="text-align: center">
+                        @if (item.RoomStatus == "Reserved")
+                    {
+                            @Html.ActionLink("View Reservations", "Index", "Rooms")
+                        }
+                        else
+                        {
+
+                        }
+                    </p>
+                </div>
+            }
+
+
+
+        </div>
+
+    }
+</div>

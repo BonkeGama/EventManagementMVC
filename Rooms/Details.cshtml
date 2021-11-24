@@ -1,0 +1,83 @@
+﻿@model OlwandleHotel.Models.Rooms
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tents</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Roomtype.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roomtype.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoBooked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoBooked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOfRooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOfRooms)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.DayNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayNo)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

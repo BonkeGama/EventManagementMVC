@@ -1,0 +1,206 @@
+﻿  
+@{
+    ViewBag.Title = "AdminDashBoard";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+<style>
+    .ma {
+        color: limegreen;
+    }
+
+    .shad {
+        box-shadow: 0px 0px 212px 2px rgba(33, 170, 11, 0.5);
+        background-color: #2c3533;
+    }
+</style>
+
+<section class="no-padding-top no-padding-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-contract"></i></div><strong>Add EQuipment Types [Rental]</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/RoomTypes/Create">Add TeEQuipmentnt Type</a>
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="col-md-3 col-sm-6">
+            <div class="statistic-block block">
+                <div class="progress-details d-flex align-items-end justify-content-between">
+                    <div class="title">
+                        <div class="icon"><i class="icon-contract"></i></div><strong>Reservation</strong>
+                    </div>
+                </div>
+                <div>
+                    <a class="ma" href="/Reserves/Create">Make Reservation for Walk in</a>
+                </div>
+            </div>
+        </div>*@
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-contract"></i></div><strong>Manage EQuipment [Rental]</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Rooms/Create">Tents</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-contract"></i></div><strong>Check EQuipment Availability [Rental]</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Rooms/Index">Tents Available</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-contract"></i></div><strong>List Of EQuipment [Rental] Req </strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Reservations1/">Show list</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-contract"></i></div><strong>Add EQuipment [Selling]</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Tentregs/Create">Add Now </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-contract"></i></div><strong>Manage EQuipment [Selling]</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Tentregs/ProductView">Tents</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-contract"></i></div><strong>List Of Cancelled Equipment [Rental] Req</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Cancellations/">Show list</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-contract"></i></div><strong>Feedbacks </strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Feedbacks/Index">View Feedbacks</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-log-out"></i></div><strong>Access</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="@Url.Action("ManageUserRoles", "Roles")">Manage Roles</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+@*<section class="no-padding-top no-padding-bottom">
+    <div class="container-fluid">
+        <div class="row">
+          
+        
+           
+            <div class="col-md-3 col-sm-6">
+                <div class="statistic-block block shad">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-pencil-case"></i></div><strong>Doctors</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Staffs/Index">Manage Doctors</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+<section class="no-padding-top no-padding-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            
+          
+            @*<div class="col-md-3 col-sm-6">
+                <div class="statistic-block block" style="background-color:#2c3932;">
+                    <div class="progress-details d-flex align-items-end justify-content-between">
+                        <div class="title">
+                            <div class="icon"><i class="icon-log-out"></i></div><strong>Patients</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="ma" href="/Customers/Index">Manage Patients</a>
+                    </div>
+                </div>
+            </div>*@
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

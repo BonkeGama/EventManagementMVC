@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Add role";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<div class="container-fluid tm-section tm-section-2">
+    <div class="row tm-media-row">
+        <div class="form-horizontal">
+
+           
+
+
+
+
+            <section class="no-padding-top">
+                <div class="container-fluid">
+                    <div class="row">
+
+
+                        <div class="col-lg-10">
+                            <div style="" class="block">
+                                <div class="title"><strong>Striped table with hover effect</strong></div>
+                             
+
+
+
+
+                                    <h2>ADD ROLES</h2>
+                                    @Html.ActionLink("Existing Roles", "Index") | @Html.ActionLink("Manage User Role", "ManageUserRoles")
+                                    <hr />
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true)
+
+                                        <div>
+                                            Role Name
+                                        </div>
+                                        <select name="RoleName" style="min-width: 162px;margin-right: 87px;">
+                                            <option value="">Select Role</option>
+                                            <option value="Admin">Admin</option>
+                                            
+                                         
+                                            <option value="Customer">Customer</option>
+                                            <option value="Driver">Driver</option>
+                                         
+
+                                        </select>
+                                        <input type="submit" value="Save" />
+                                    }
+
+
+
+
+
+
+                             
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+            @ViewBag.ResultMessage
+
+
+            @{
+
+                Html.RenderAction("Index", "Roles");
+
+            }
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OlwandleHotel.Models.AddPrice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+<style>
+    body {
+        background-image: url("../../Content/img/50-Beautiful-and-Minimalist-Presentation-Backgrounds-041.jpg");
+    }
+</style>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.priceID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.priceID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.priceID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,73 @@
+﻿@model OlwandleHotel.Models.Customer
+
+@{
+    ViewBag.Title = "CustomerDashBord";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+
+
+<div class="page-content" style="padding-bottom:0px;">
+
+
+
+
+    <div class="container-fluid tm-section" style="margin-left: 2%;">
+      
+     
+
+            <div class="row tm-media-row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                   
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                    <div class="tm-media-text-container" style="float:initial;">
+                        <h5>Customer Registered Details</h5>
+
+                        <div class="tm-media-description tm-gray-text-2">
+                            <p id="pmargine">Name</p><span>@Html.DisplayFor(model => model.Title)  @Html.DisplayFor(model => model.FName)  @Html.DisplayFor(modelItem => modelItem.MName)</span>
+                            <p id="pmargine">Last Name </p><span> @Html.DisplayFor(modelItem => modelItem.LName) </span>
+                            <p id="pmargine">RSA ID NO:</p><span> @Html.DisplayFor(model => model.IdentityNumber) </span>
+                        </div>
+                    </div>
+                   
+
+
+
+                    <div class="tm-media-text-container" style="float:left;min-width: 40em;padding-left: 0px;">
+                        <div class="messages-block block rightbodermargin">
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+               
+            </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+

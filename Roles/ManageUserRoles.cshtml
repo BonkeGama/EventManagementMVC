@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "ManageUserRoles";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+<div style="padding-top: 9px;margin-left: 54px;margin-right: 511px;padding-right: 64px;margin-top: 0px;">
+    <h2>Manage User Roles</h2>
+    @Html.ActionLink("Create New Role", "Create") | @Html.ActionLink("Manage User Role", "ManageUserRoles")
+    <hr />
+    <section>
+        <h2>Role Add to User</h2>
+
+        @using (Html.BeginForm("RoleAddToUser", "Roles"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <p>
+                Username : @Html.TextBox("UserName")
+                Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select a role...")
+
+            </p>
+
+            <input type="submit" value="Save" />
+
+        }
+    </section>
+    <hr />
+
+    <section>
+        <h3>Get Roles For A User</h3>
+        @using (Html.BeginForm("GetRoles", "Roles"))
+        {
+            @Html.AntiForgeryToken()
+            <p>
+                Username : @Html.TextBox("UserName")
+                <input type="submit" value="Get Roles for this User" />
+            </p>
+        }
+
+        @if (ViewBag.RolesForThisUser != null)
+        {
+            <div style="background-color:lawngreen;">
+                <h3>Roles For This User </h3>
+                <ol>
+                    @foreach (string s in ViewBag.RolesForThisUser)
+                    {
+                        <li>@s</li>
+                    }
+                </ol>
+            </div>
+        }
+        @if (ViewBag.RolesForThisUser == null)
+        {
+            <div style="background-color:red;">
+                <h3>This User Is Not Assigned Any Role </h3>
+            </div>
+        }
+    </section>
+    <hr />
+    <section>
+        <h3>Remove A User From A Role</h3>
+
+        @using (Html.BeginForm("DeleteRoleForUser", "Roles"))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <p>
+                Username : @Html.TextBox("UserName")
+                Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+
+            </p>
+
+            <input type="submit" value="Delete this user from Role" />
+        }
+    </section>
+</div>

@@ -1,0 +1,96 @@
+﻿@using OlwandleHotel.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = null;
+
+}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="~/Content/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="~/Content/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Custom Font Icons CSS-->
+    <link rel="stylesheet" href="~/Content/css/font.css">
+    <!-- Google fonts - Muli-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="~/Content/css/style.green.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="~/Content/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="~/Content/img/favicon.ico">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <div class="login-page">
+        <div class="container d-flex align-items-center">
+            <div class="form-holder has-shadow">
+                <div class="row justify-content-md-center">
+                    <!-- Logo & Information Panel-->
+                    <div class="col-lg-6" style="        background-color: #DC143C;">
+                        <div class="info d-flex align-items-center">
+                            <div style="height:100%" class="content">
+                                <a style="width:100%;color:#ffd800;font-size:small;" href="@Url.Action("Index", "Home")" class="signup">Back to home</a>
+
+                               
+
+                                <div class="logo">
+                                    <h1 style="width:100%;margin-top:70px;margin-bottom:70px;text-align:center;">Durban Equipment Hire</h1>
+                                </div>
+                                <p>Welcome back!<br /></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Form Panel    -->
+                    <div class="col-lg-6" style="        background-color: #2F4F4F;">
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="form d-flex align-items-center">
+                                <div class="content">
+                                    <small>Don't have an account? </small><a href="@Url.Action("Registerp", "Account")" class="signup">Register here!</a><hr />
+                                    <form method="get" class="form-validate">
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                            <label for="login-username" class="label-material">Email</label>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                            <label for="login-password" class="label-material">Password</label>
+                                        </div><input type="submit" value="Log in" class="btn btn-primary" /><hr />
+                                    </form><br />@Html.CheckBoxFor(m => m.RememberMe) &nbsp;@Html.LabelFor(m => m.RememberMe)<br />
+
+
+                                    <small>Forgot your or password? </small><a href="@Url.Action("Registerp", "Account")" class="signup">Reset password</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/front.js"></script>
+</body>

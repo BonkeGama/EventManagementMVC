@@ -1,0 +1,51 @@
+﻿@model OlwandleHotel.Models.RoomService
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RoomService</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.price.priceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price.priceID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreakFast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BreakFast)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Launch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Launch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dinner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dinner)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.servicesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

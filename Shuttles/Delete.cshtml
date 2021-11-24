@@ -1,0 +1,73 @@
+﻿@model OlwandleHotel.Models.Shuttle
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/GuestLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Shuttle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.applicationUser.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.applicationUser.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reserv.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reserv.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.source)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.finacharge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.finacharge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pickDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pickDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pickedup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pickedup)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

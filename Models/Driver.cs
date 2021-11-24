@@ -1,0 +1,51 @@
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace OlwandleHotel.Models
+{
+    public class Driver
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        // [DisplayName("ID")]
+        [Display(Name = "Driver")]
+        public string Driver_ID { get; set; }
+
+        //[Required(ErrorMessage = "ID number is required")]
+        [DisplayName("ID Number")]
+        public string Driver_IDNo { get; set; }
+
+        //[Required(ErrorMessage = "First name is required")]
+        [DisplayName("Driver Firstname")]
+        public string Driver_Name { get; set; }
+
+        //[Required(ErrorMessage = "Last name is required")]
+        [DisplayName("Last name ")]
+        public string Driver_Surname { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Contact Number")]
+        //[Required(ErrorMessage = "Contact number is required!")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+                  ErrorMessage = "Entered Contact number format is not valid.")]
+        public string Driver_CellNo { get; set; }
+
+        // [Required(ErrorMessage = "Residence address is required")]
+        [DisplayName("Residence address")]
+        public string Driver_Address { get; set; }
+
+        //[Required(ErrorMessage = "Email address is required")]
+        [DisplayName("Email address")]
+        [EmailAddress]
+        public string Driver_Email { get; set; }
+
+
+        [DisplayName("Vehicle Make")]
+        public string VehicleName { get; set; }
+        public List<Orders> Orders { get; set; }
+
+
+
+    }
+}

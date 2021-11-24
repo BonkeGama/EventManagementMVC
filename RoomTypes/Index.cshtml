@@ -1,0 +1,121 @@
+﻿@model IEnumerable<OlwandleHotel.Models.RoomTypes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Index</h2>
+<style>
+    body {
+        background-image: url("../../Content/img/50-Beautiful-and-Minimalist-Presentation-Backgrounds-041.jpg");
+    }
+</style>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasicCharge)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasicCharge)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RoomTypeId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RoomTypeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RoomTypeId })
+            </td>
+        </tr>
+    }
+  
+</table>
+@*<div class="panel panel-default">
+    <div class="panel-heading">
+        <div>All Room Types</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+
+                <th>Room Type</th>
+                <th>Description</th>
+
+                <th class="text-right">Price</th>
+                <th class="text-center">Quantity</th>
+                <th class="text-center">Rooms Available</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+            <tr>
+
+                <td>
+                    @Html.ActionLink(item.Type, "Edit", new { id = item.RoomTypeId })
+                </td>
+                <td>
+                    @Html.Raw(item.Description)
+                </td>
+
+                <td class="text-right">@item.BasicCharge.ToString("R0.00")</td>
+                <td class="text-right">@item.Qty</td>
+                <td class="text-right">@item.NumOfRooms</td>
+                <td class="text-center">
+                    @using (Html.BeginForm("Delete", "RoomTypes"))
+                    {
+                        @Html.Hidden("RoomTypeId", item.RoomTypeId, new { id = item.RoomTypeId })
+                        <input type="submit"
+                               class="btn btn-default btn-xs"
+                               value="Delete" />
+                        <a href="@Url.Action("Details", "RoomTypes", new { id = item.RoomTypeId })" class="btn btn-default btn-xs">
+                            <span class="fa fa-eye">  </span>Details
+                        </a>
+                    }
+
+                </td>
+
+            </tr>
+            }
+        </table>
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Add a New Room Type", "Create", null,
+        new { @class = "btn btn-default" })
+
+        @*<div class="text-center">
+            <a class="btn btn-primary" href="#">Continue shopping</a>
+            @Html.ActionLink("Add Room Type", "Create", null,
+    new { @class = "btn btn-primary" })
+        </div>*@
+    @*</div>
+
+
+</div>*@

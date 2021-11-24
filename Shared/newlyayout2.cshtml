@@ -1,0 +1,166 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/vendor/bootstrap/css/bootstrap.min.css")">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/vendor/font-awesome/css/font-awesome.min.css")">
+    <!-- Custom Font Icons CSS-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/font.css")">
+    <!-- Google fonts - Muli-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/style.green.css")" id="theme-stylesheet">
+    @*<link rel="stylesheet" href="~/Content/css/style.default.css" id="theme-stylesheet">*@
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/custom.css")">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="@Url.Content("~/Content/img/favicon.ico")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/NavMenu.css")">
+    <!-- Font Awesome -->
+
+
+    <link rel="stylesheet" href="@Url.Content("~/css/main.css")">
+    <script src="@Url.Content("~/js/vendor/modernizr-2.6.2.min.js")"></script>
+
+
+    <style type="text/css">
+        .back-link a {
+            color: #4ca340;
+            text-decoration: none;
+            border-bottom: 1px #4ca340 solid;
+        }
+
+            .back-link a:hover,
+            .back-link a:focus {
+                color: #408536;
+                text-decoration: none;
+                border-bottom: 1px #408536 solid;
+            }
+
+        .entry-header {
+            text-align: left;
+            margin: 0 auto 50px auto;
+            width: 80%;
+            max-width: 978px;
+            position: relative;
+            z-index: 10001;
+        }
+
+        #demo-content {
+            padding-top: 0px;
+        }
+    </style>
+
+</head>
+<body id="body1" class="demo">
+   @*<body id="body1" class="demo" style="background-image:url('/img/schoolX.jpg');background-size: cover;">*@ 
+        <header class="header">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <div class="navbar-header">
+                        <!-- Navbar Header--><a href="@Url.Action("Index","Home")" class="navbar-brand">
+                            <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary"></strong><strong></strong></div>
+                            <div class="brand-text brand-sm"><strong class="text-primary"></strong><strong></strong></div>
+                        </a>
+                        <!-- Sidebar Toggle Btn-->
+                        <button class="sidebar-toggle"><i class="fa fa-long-arrow-left"></i></button>
+
+
+
+                    </div>
+                    <div class="container">
+                        <div class="navbar-collapse collapse">
+                            @*<ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                <li>@Html.ActionLink("Admission", "Admission", "Home")</li>
+                                <li>@Html.ActionLink("Application ", "Apply", "Applications")</li>
+                                <li>@Html.ActionLink("Gallery ", "Gallery", "Home")</li>
+                            </ul>*@
+                            @Html.Partial("_LoginPartial")
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </nav>
+        </header>
+
+
+
+
+        <div class="d-flex align-items-stretch">
+
+            <div class="page-content" style="margin-left:15%;margin-top:35px;margin-right:15%;width:70%;background:rgba(0, 0, 0, 0.65);">
+                <div class="page-header">
+                    <div class="container-fluid">
+                        <h2 class="h5 no-margin-bottom">@ViewBag.Title</h2>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                @RenderBody()
+
+
+
+
+
+
+
+                <footer>
+                    <p>&copy;  @DateTime.Now.Year - Izwi-Labantu Tent. All right reserved</p>
+                </footer>
+            </div>
+        </div>
+
+
+
+        <!-- Demo content -->
+        <div id="demo-content">
+
+            <div id="loader-wrapper">
+                <div id="loader"></div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+
+        </div>
+        <!-- /Demo content -->
+        <!-- JavaScript files-->
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+        <script src="@Url.Content("~/Content/vendor/jquery/jquery.min.js")"></script>
+        <script src="@Url.Content("~/Content/vendor/popper.js/umd/popper.min.js")"></script>
+        <script src="@Url.Content("~/Content/vendor/bootstrap/js/bootstrap.min.js")"></script>
+        <script src="@Url.Content("~/Content/vendor/jquery.cookie/jquery.cookie.js")"></script>
+        <script src="@Url.Content("~/Content/vendor/chart.js/Chart.min.js")"></script>
+        <script src="@Url.Content("~/Content/vendor/jquery-validation/jquery.validate.min.js")"></script>
+        <script src="@Url.Content("~/Content/js/charts-home.js")"></script>
+        <script src="@Url.Content("~/Content/js/front.js")"></script>
+
+        <script src=@Url.Content("~/js/vendor/jquery-1.9.1.min.js")></script>
+
+        <script>window.jQuery || document.write('<script src="@Url.Content("js/vendor/jquery-1.9.1.min.js")" ><\/script>')</script>
+
+        <script src="@Url.Content("~/js/main.js")"></script>
+
+    </body>
+</html>

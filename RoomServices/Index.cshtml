@@ -1,0 +1,52 @@
+﻿@model IEnumerable<OlwandleHotel.Models.RoomService>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/newlwayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.price.priceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BreakFast)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Launch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dinner)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.price.priceID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BreakFast)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Launch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dinner)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.servicesID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.servicesID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.servicesID })
+        </td>
+    </tr>
+}
+
+</table>

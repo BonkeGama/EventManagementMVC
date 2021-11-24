@@ -1,0 +1,242 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    @*@Styles.Render("~/Content/css")*@
+
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="@Url.Content("~/css/myStyle.css")">
+    <link rel="stylesheet" href="@Url.Content("~/font-awesome-4.5.0/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap.css")">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="@Url.Content("~/css/bootstrap.min.css")">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="@Url.Content("~/css/hero-slider-style.css")">                                  <!-- Hero slider style -->
+    <link rel="stylesheet" href="@Url.Content("~/css/templatemo-style.css")">                                   <!-- Templatemo style -->
+
+    @RenderSection("Homepage", required: false)
+
+
+
+
+    <script>
+
+          // Add active class to the current button (highlight it)
+          var header = document.getElementById("myDIV");
+          var btns = header.getElementsByClassName("name");
+          for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function () {
+                  var current = document.getElementsByClassName("active");
+                  current[0].className = current[0].className.replace(" active", "");
+                  this.className += " active";
+              });
+          }
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+
+    <header class="main__header">
+        @RenderSection("AnimText", required: false)
+        <div class="container">
+            <nav class="navbar navbar-default" role="navigation" style="background-color: inherit">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="navbar-header">
+                    <h1 class="navbar-brand"><a href="/Home/Index">Christian High School</a></h1>
+                    <a href="" class="submenu">Menus</a>
+                </div>
+                <div class="menuBar">
+                    <ul class="menu" id="myDIV">
+
+                        <li class="name">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="name">@Html.ActionLink("About", "About", "Home")</li>
+                        <li class="name">@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                        <li class="name">@Html.ActionLink("Admission", "Admission", "Home")</li>
+                        <li class="name">@Html.ActionLink("Application ", "Apply", "Applications")</li>
+                        <li class="name">@Html.ActionLink("Gallery ", "Gallery", "Home")</li>
+                        @*<li class="dropdown">
+            <a href="#">School Activities</a>
+            <ul>
+                <li><a href="index_fixed.html">Home / Fixed</a></li>
+                <li><a href="index_with_blog.html">Home + Blog</a></li>
+
+            </ul>
+        </li>*@
+                        @Html.Partial("_LoginPartial")
+                    </ul>
+                </div>
+
+
+
+            </nav>
+
+        </div>
+    </header>
+
+    @RenderBody()
+
+
+    <!-- Contact section -->
+    <section class="tm-bg-purple tm-section">
+        <div class="container-fluid tm-section-5-inner">
+
+
+
+            <div class="row">
+                <div class="col-xs-12 text-xs-center">
+                    <div class="tm-social-icons-container">
+
+                        <a href="#" class="tm-social-icon-link"><i class="fa fa-facebook tm-social-icon"></i></a>
+                        <a href="#" class="tm-social-icon-link"><i class="fa fa-google-plus tm-social-icon"></i></a>
+                        <a href="#" class="tm-social-icon-link"><i class="fa fa-twitter tm-social-icon"></i></a>
+                        <a href="#" class="tm-social-icon-link"><i class="fa fa-behance tm-social-icon"></i></a>
+                        <a href="#" class="tm-social-icon-link"><i class="fa fa-linkedin tm-social-icon"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <footer class="col-xs-12 text-xs-center">
+                    <p class="tm-text-white tm-copyright-text">
+                        Christain Secondary School
+
+                        | Designed by Quality Control
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <!-- load JS files -->
+    <script src="@Url.Content("~/js/jquery-1.11.3.min.js")"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap (http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h) -->
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>                 <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
+    <script src="@Url.Content("~/js/hero-slider-script.js")"></script>            <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
+    <script src="@Url.Content("~/js/jquery.touchSwipe.min.js")"></script>         <!-- http://labs.rampinteractive.co.uk/touchSwipe/demos/ -->
+    <script>
+
+
+        $(document).ready(function () {
+
+            /* Auto play bootstrap carousel
+            * http://stackoverflow.com/questions/13525258/twitter-bootstrap-carousel-autoplay-on-load
+            -----------------------------------------------------------------------------------------*/
+            $('.carousel').carousel({
+                interval: 3000
+            })
+
+            /* Enable swiping carousel for tablets and mobile
+             * http://lazcreative.com/blog/adding-swipe-support-to-bootstrap-carousel-3-0/
+             ---------------------------------------------------------------------------------*/
+            if ($(window).width() <= 991) {
+                $(".carousel-inner").swipe({
+                    //Generic swipe handler for all directions
+                    swipeLeft: function (event, direction, distance, duration, fingerCount) {
+                        $(this).parent().carousel('next');
+                    },
+                    swipeRight: function () {
+                        $(this).parent().carousel('prev');
+                    },
+                    //Default is 75px, set to 0 for demo so any distance triggers swipe
+                    threshold: 0
+                });
+            }
+
+            /* Handle window resize */
+            $(window).resize(function () {
+                if ($(window).width() <= 991) {
+                    $(".carousel-inner").swipe({
+                        //Generic swipe handler for all directions
+                        swipeLeft: function (event, direction, distance, duration, fingerCount) {
+                            $(this).parent().carousel('next');
+                        },
+                        swipeRight: function () {
+                            $(this).parent().carousel('prev');
+                        },
+                        //Default is 75px, set to 0 for demo so any distance triggers swipe
+                        threshold: 0
+                    });
+                }
+            });
+        });
+
+
+
+
+
+        // function([string1, string2],target id,[color1,color2])
+        //consoleText(['Hello Welcom.', 'Durban', 'Made with Love.'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
+        consoleText(['Hello and welcome...', 'Durban high school...', 'Made with Love...'], 'text', ['tomato', 'red', 'lightblue']);
+
+        function consoleText(words, id, colors) {
+            if (colors === undefined) colors = ['#fff'];
+            var visible = true;
+            var con = document.getElementById('console');
+            var letterCount = 1;
+            var x = 1;
+            var waiting = false;
+            var target = document.getElementById(id)
+            target.setAttribute('style', 'color:' + colors[0])
+            window.setInterval(function () {
+
+                if (letterCount === 0 && waiting === false) {
+                    waiting = true;
+                    target.innerHTML = words[0].substring(0, letterCount)
+                    window.setTimeout(function () {
+                        var usedColor = colors.shift();
+                        colors.push(usedColor);
+                        var usedWord = words.shift();
+                        words.push(usedWord);
+                        x = 1;
+                        target.setAttribute('style', 'color:' + colors[0])
+                        letterCount += x;
+                        waiting = false;
+                    }, 1000)
+                } else if (letterCount === words[0].length + 1 && waiting === false) {
+                    waiting = true;
+                    window.setTimeout(function () {
+                        x = -1;
+                        letterCount += x;
+                        waiting = false;
+                    }, 1000)
+                } else if (waiting === false) {
+                    target.innerHTML = words[0].substring(0, letterCount)
+                    letterCount += x;
+                }
+            }, 120)
+            window.setInterval(function () {
+                if (visible === true) {
+                    con.className = 'console-underscore hidden'
+                    visible = false;
+
+                } else {
+                    con.className = 'console-underscore'
+
+                    visible = true;
+                }
+            }, 400)
+        }
+
+
+
+    </script>
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

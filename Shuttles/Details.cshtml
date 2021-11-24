@@ -1,0 +1,67 @@
+﻿@model OlwandleHotel.Models.Shuttle
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/GuestLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shuttle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.applicationUser.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.applicationUser.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reserv.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reserv.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.source)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.finacharge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.finacharge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pickDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pickDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pickedup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pickedup)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PickupId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

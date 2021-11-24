@@ -1,0 +1,195 @@
+﻿
+@if (ViewBag.User == "Admin")
+{
+    <li><a href="@Url.Action("ManageUserRoles", "Roles")"> <i class="icon-home"></i>Manage Roles </a></li>
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Registration</a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("Enrollments", "Create")">Registration Process</a></li>
+                                                            <li><a href="@Url.Action("Enrollments", "Index")">Manage Registration </a></li>
+
+                                                        </ul>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Grade </a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("Grades", "Index")">Manage Grade</a></li>
+                                                            <li><a href="@Url.Action("Grades", "Create")">Add Grade</a></li>
+
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Class Room </a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("SchoolClasses", "Index")">Manage Class</a></li>
+                                                            <li><a href="@Url.Action("SchoolClasses", "Create")">Add Class</a></li>
+
+                                                        </ul>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Courses </a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("Courses", "Index")">Manage Courses</a></li>
+                                                            <li><a href="@Url.Action("Courses", "Create")">Add Course</a></li>
+
+                                                        </ul>
+                                                    </li>
+
+
+
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Teachers </a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("Teachers", "Index")">Manage Teachers</a></li>
+                                                            <li><a href="@Url.Action("Account", "Register")">Add Teachers</a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Learners </a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("Students", "Index")">Manage Learners</a></li>
+                                                            <li><a href="@Url.Action("Account", "Register")">Add Learners</a></li>
+
+                                                        </ul>
+                                                    </li>
+
+                                                    <li><a href="@Url.Action("Customers", "Index")"> <i class="icon-home"></i>Customer </a></li>
+
+
+
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Subject </a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("Subjects", "Index")">View</a></li>
+                                                            <li><a href="@Url.Action("Subjects", "Create")">Create</a></li>
+                                                        </ul>
+                                                    </li>
+
+
+
+
+}
+else if (ViewBag.User == "Clerk")
+{
+    <li>
+        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Registration</a>
+        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("DashBordPage", "Home")">Registration Process</a></li>
+            <li><a href="@Url.Action("DashBordPage", "Home")">Manage Registration </a></li>
+
+        </ul>
+    </li>
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Learners </a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("DashBordPage", "Home")">Manage Learners</a></li>
+                                                            <li><a href="@Url.Action("DashBordPage", "Home")">Add Learners</a></li>
+
+                                                        </ul>
+                                                    </li>
+
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Teachers </a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("DashBordPage", "Home")">Manage Teachers</a></li>
+                                                            <li><a href="@Url.Action("DashBordPage", "Home")">Add Teachers</a></li>
+                                                        </ul>
+                                                    </li>
+
+
+}
+else if (ViewBag.User == "Customer")
+{
+
+    <li>
+        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>My children</a>
+        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("DashBordPage", "Home")">View children</a></li>
+            <li><a href="@Url.Action("DashBordPage", "Home")">Add children</a></li>
+        </ul>
+    </li>
+
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Event</a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("DashBordPage", "Home")">Manage Class</a></li>
+                                                            <li><a href="@Url.Action("DashBordPage", "Home")">Add Class</a></li>
+
+                                                        </ul>
+                                                    </li>
+
+                                                    <li><a href="@Url.Action("DashBordPage", "Home")"> <i class="icon-home"></i>Event </a></li>
+
+}
+else if (ViewBag.User == "Student")
+{
+    <li>
+        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Student Admin </a>
+        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("DashBordPage", "Home")">UpDate Profile</a></li>
+            <li><a href="@Url.Action("DashBordPage", "Home")">Registration</a></li>
+            <li><a href="@Url.Action("DashBordPage", "Home")">Course Subjects</a></li>
+        </ul>
+    </li>
+
+         <li>
+             <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Assignment </a>
+                 <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                     <li><a href="@Url.Action("DashBordPage", "Home")">View Assignments</a></li>
+                        <li><a href="@Url.Action("DashBordPage", "Home")">submission</a></li>
+
+                         </ul>
+                          </li>
+
+                           <li>
+                             <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Progress Report </a>
+                             <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                              <li><a href="@Url.Action("DashBordPage", "Home")">View Progress Report</a></li>
+                                <li><a href="@Url.Action("DashBordPage", "Home")">Exam Results</a></li>
+
+                                 </ul>
+                         </li>
+
+}
+else if (ViewBag.User == "Staff")
+{
+    <li>
+        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>My Subject </a>
+        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+            <li><a href="@Url.Action("DashBordPage", "Home")">View</a></li>
+            <li><a href="@Url.Action("DashBordPage", "Home")">Create</a></li>
+        </ul>
+    </li>
+
+
+                                                    <li>
+                                                        <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>My Class</a>
+                                                        <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                                                            <li><a href="@Url.Action("DashBordPage", "Home")">Manage Class</a></li>
+                                                            <li><a href="@Url.Action("DashBordPage", "Home")">Add Class</a></li>
+
+                                                        </ul>
+                                                    </li>
+
+                                                    <li><a href="@Url.Action("DashBordPage", "Home")"> <i class="icon-home"></i>Event </a></li>
+}
+
+else
+{
+    <li><a href="@Url.Action("Index", "Events")">   <i class="icon-info"></i>Events </a></li>
+                                                    <li><a href="@Url.Action("Fees", "Home")">   <i class="icon-info"></i>Fees </a></li>
+                                                    <li><a href="@Url.Action("Admission", "Home")"> <i class="icon-contract"></i>Admission </a> </li>
+                                                    <li><a href="@Url.Action("Contact", "Home")">  <i class="fa fa-phone"></i>Contact Us </a> </li>
+}
+
+
